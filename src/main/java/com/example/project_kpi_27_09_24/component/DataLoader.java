@@ -11,6 +11,8 @@ import com.example.project_kpi_27_09_24.repository.RoleRepository;
 import com.example.project_kpi_27_09_24.repository.UserRepository;
 import com.example.project_kpi_27_09_24.service.CalculationService;
 import com.example.project_kpi_27_09_24.service.OrganizationService;
+import com.example.project_kpi_27_09_24.utils.json.AddressModel;
+import com.example.project_kpi_27_09_24.utils.json.JsonData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
@@ -56,7 +58,8 @@ public class DataLoader implements CommandLineRunner {
         //List<Object[]> data=calculationService.getAllAverageAmount(year,monthD,2L);
        // data.forEach(objects -> System.out.println(objects[0]+"-"+objects[1]+" - "+objects[2]));
 
-
+        AddressModel addressModel = JsonData.getModelJson("regions.json");
+        System.out.println(addressModel.getQuarters().size());
         if (initMode.equals("always")) {
 
             if (!permissionRepository.existsByPermissionName(PermissionName.USER_CREATE)) {

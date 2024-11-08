@@ -33,8 +33,7 @@ public class Quarter  extends IdGenerate {
         this.district=district;
     }
 
-    public Quarter(Long
-                           quarterId, String name, District district) {
+    public Quarter(Long quarterId, String name, District district) {
         this.quarterId = quarterId;
         this.name = name;
         this.district = district;
